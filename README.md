@@ -1,71 +1,155 @@
-<h1 align='center'>
- 🔎<br>GitHub Finder
-</h1>
+# GitHub Finder
+ 
+> Search any GitHub profile and instantly explore their top repositories — built with React, TypeScript, and the GitHub public API.
+ 
+[![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://reactjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Vite](https://img.shields.io/badge/Vite-5-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
+[![GitHub API](https://img.shields.io/badge/GitHub_API-Public-181717?style=for-the-badge&logo=github&logoColor=white)](https://docs.github.com/en/rest)
 
-![image](https://github.com/Luan-Neumann-Dev/GitHubFinder/assets/155394874/56d48d3d-287d-4001-85b5-1c271b406c74)
 
-![image](https://github.com/Luan-Neumann-Dev/GitHubFinder/assets/155394874/5f05f6c3-64d1-4605-98c2-dbd5def5e329)
+![Project Demo](https://github.com/Luan-Neumann-Dev/GitHubFinder/assets/155394874/56d48d3d-287d-4001-85b5-1c271b406c74)
+![Project Demo](https://github.com/Luan-Neumann-Dev/GitHubFinder/assets/155394874/5f05f6c3-64d1-4605-98c2-dbd5def5e329)
+![Project Demo](https://github.com/Luan-Neumann-Dev/GitHubFinder/assets/155394874/e73e1789-e3c6-404f-8f53-3fed474bd7bf)
 
-![image](https://github.com/Luan-Neumann-Dev/GitHubFinder/assets/155394874/e73e1789-e3c6-404f-8f53-3fed474bd7bf)
+**[🚀 View Live Demo](https://github-finder-lemon-eight.vercel.app/)**
 
-<h4 align='center'>
-  <a href='https://github-finder-lemon-eight.vercel.app/'>Click here to view the project</a>
-</h4>
+## 🎯 About
+ 
+GitHub Finder is a React SPA that lets you search any GitHub user by username and instantly view their public profile data — avatar, location, follower count and following count. From the profile view, you can navigate to that user's top 5 most-starred repositories, all fetched in real time from the GitHub public API.
+ 
+The project was built to practice integrating a real-world REST API with React, while applying TypeScript for type safety across components and data flows.
+ 
+## ✨ Key Features
+ 
+- 🔎 **User Search** - Search any GitHub username and retrieve live profile data from the GitHub API
+- 👤 **Profile Overview** - Displays avatar, username, location, followers, and following count
+- ⭐ **Top Repositories** - Lists the 5 most-starred public repositories of the searched user
+- ⚡ **Loading States** - Loader component displayed during API requests for smooth UX
+- 🚫 **Error Handling** - User-friendly error screen when a profile is not found (404)
+- 🧭 **Client-side Routing** - Seamless navigation between search and repository pages via React Router
+ 
+## 🛠️ Tech Stack
 
-> GitHubFinder is an application developed using React and Vite, with TypeScript, allowing users to search for GitHub profiles and display detailed information about those profiles, including location, number of followers, following, and the top 5 repositories with the most stars.
-
-## 💼 Technologies Used
-
-- React
-- Vite
-- JavaScript
-- TypeScript
-- GitHub public API
-
-## 🏃 How to Run the Project
-
-To run the project locally, follow these instructions:
-
-1. **Clone** this repository on Visual Studio Code
-```
-git clone https://github.com/Luan-Neumann-Dev/GitHubFinder/
-```
-
-2. **Open** the console and navigate to the project folder:
-```
+**Frontend:**
+- React 18 — Component architecture and state management with hooks
+- TypeScript — Static typing for props, API responses, and component interfaces
+- React Router DOM v6 — Client-side routing between the home and repos pages
+- React Icons — Icon library for UI elements (search icon, location pin)
+- CSS Modules — Scoped, component-level styling
+ 
+**Build Tool:**
+- Vite — Fast dev server and optimized production bundler
+ 
+**External API:**
+- GitHub REST API (public) — User profiles and repository data
+ 
+## 🚀 Quick Start
+```bash
+# Clone the repository
+git clone https://github.com/Luan-Neumann-Dev/GitHubFinder.git
+ 
+# Navigate to project
 cd GitHubFinder
-```
-
-3. **Install** project dependencies via the terminal:
-```
+ 
+# Install dependencies
 npm install
-```
-4. **Start** the server:
-```
+ 
+# Start the dev server
 npm run dev
 ```
 
-5. Open your browser and go to `http://localhost:5173` to see the project in action! 🌟
+Then open [http://localhost:5173](http://localhost:5173) in your browser.
+ 
+Or visit the **[live demo →](https://github-finder-lemon-eight.vercel.app/)**
+ 
+## 📁 Project Structure
 
-## 💪 Contribute!
-Liked the project? Want to make it even better? Contributions are always welcome! Feel free to send pull requests, report issues, or give suggestions for improvements.
+```
+GitHubFinder/
+├── src/
+│   ├── components/         # Reusable UI components
+│   │   ├── Search.tsx      # Search input + trigger
+│   │   ├── User.tsx        # Profile card display
+│   │   ├── Repo.tsx        # Repository card
+│   │   ├── Loader.tsx      # Loading spinner
+│   │   ├── BackBtn.tsx     # Back navigation button
+│   │   └── Error.tsx       # Error feedback component
+│   ├── routes/             # Page-level components
+│   │   ├── Home.tsx        # Search page + API call logic
+│   │   └── Repos.tsx       # Top repositories page
+│   ├── types/              # TypeScript interfaces
+│   │   ├── user.ts         # UserProps type
+│   │   └── repo.ts         # RepoProps type
+│   ├── App.tsx             # Root component with router outlet
+│   └── main.tsx            # Entry point
+├── index.html
+├── vite.config.ts
+└── tsconfig.json
+```
 
-<h2> 🙋 Author  </h2>
-<table>
-  <tr>
-    <td align="center">
-      <a href="https://github.com/Luan-Neumann-Dev">
-        <img src="https://avatars.githubusercontent.com/u/155394874?s=400&u=9694d36eda852061b89679e4da99e37e8c22c7ab&v=4" width="100px;" alt="Foto do Luan no GitHub"/><br>
-        <sub>
-          <b>Luan Neumann Dev</b>
-        </sub>
-      </a>
-    </td>
-  </tr>
-</table>
+## 💡 Technical Highlights
+ 
+### GitHub API Integration with TypeScript
+API responses are consumed via native `fetch` and typed with custom interfaces, making data handling predictable across all components.
+ 
+```typescript
+// src/types/user.ts
+export type UserProps = {
+  avatar_url: string;
+  login: string;
+  location: string;
+  followers: number;
+  following: number;
+};
+```
 
+### Sorting Repos by Stars on the Client
+Instead of relying on API query params, repos are sorted client-side and sliced to the top 5 — keeping the implementation simple and avoiding additional API calls.
+ 
+```typescript
+let orderedRepos = data.sort((a: RepoProps, b: RepoProps) =>
+  b.stargazers_count - a.stargazers_count
+);
+orderedRepos = orderedRepos.slice(0, 5);
+```
+## 📚 What I Learned
+ 
+**Technical Skills:**
+- Consuming a real REST API with `fetch` and handling different response statuses (200, 404)
+- Applying TypeScript interfaces to type API responses and component props end-to-end
+- Setting up client-side routing with React Router v6 (`<Outlet>`, `useParams`)
+- Using CSS Modules to keep styles scoped and avoid naming conflicts
+ 
+**Best Practices:**
+- Managing UI states (loading, error, data) explicitly with separate `useState` flags
+- Separating data-fetching logic (routes) from presentational components
+- Typing props strictly to catch integration errors at compile time
+ 
+## 🗺️ Roadmap
+ 
+- [ ] Add pagination for repositories instead of limiting to top 5
+- [ ] Display repository details: language, last updated, description
+- [ ] Support keyboard navigation (already handles Enter key in search)
+- [ ] Add dark/light theme toggle
+- [ ] Cache recent searches to reduce repeated API calls
+ 
+## 📝 Notes
+ 
+- No authentication is used — the app relies on the GitHub public API (rate-limited to 60 req/hour per IP)
+- Not affiliated with GitHub, Inc.
+ 
+## 📄 License
+ 
+MIT License - see [LICENSE](LICENSE) for details.
+ 
+## 👤 Author
+ 
+**Luan Neumann**
+ 
+- LinkedIn: [luan-neumann-dev](https://www.linkedin.com/in/luan-neumann-dev/)
+- GitHub: [@Luan-Neumann-Dev](https://github.com/Luan-Neumann-Dev)
+ 
 ---
-<a href="https://www.linkedin.com/in/luan-neumann-dev/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
-<a href="https://github.com/Luan-Neumann-Dev" target="_blank"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" target="_blank"></a>
-<a href="https://instagram.com/luanneumann" target="_blank"><img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white" target="_blank"></a>
-<a href = "mailto:luan.neumann.dev@gmail.com"><img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
+ 
+⭐ Found this helpful? Give it a star!
